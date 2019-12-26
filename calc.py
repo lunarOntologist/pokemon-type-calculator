@@ -1,24 +1,17 @@
-normD=1
-fireD=1
-fightD=1
-watD=1
-flyD=1
-grassD=1
-poiD=1
-electricD=1
-groundD=1
-psyD=1
-rockD=1
-iceD=1
-bugD=1
-draD=1
-ghostD=1
-darkD=1
-steelD=1
-fairyD=1
+#!/usr/bin/env python3 
+"""
+Type advantage calculator
+"""
 
-type1= input("What pokemon type do you want to know about?: ").lower()
-type2= input("What is the secondary type? (If none, say none, or press enter to skip): ").lower()
+def get_inputs():
+  """Prompts the user for one or more types to check.
+
+  Returns: 
+    the names of the two types given
+  """
+  type1= input("What pokemon type do you want to know about?: ").lower()
+  type2= input("What is the secondary type? (If none, say none, or press enter to skip): ").lower()
+  return type1, type2
 
 def norm(vals):
   print("normal")
@@ -194,29 +187,57 @@ def none(vals):
 typedefense={
 "normal": norm, "fire": fire, "fighting": fight, "fight": fight, "water": wat, "fly": fly, "flying": fly, "grass": grass, "poison": poi, "electric": electric, "ground": ground, "psychic": psy, "psy": psy, "rock": rock, "ice": ice, "bug": bug, "dragon": dra, "dra": dra, "ghost": ghost, "dark": dark, "steel": steel, "faerie": fairy, "fairy": fairy, "none": none, "": none
 }
-vals = {
-  "bugD": 1,
-  "fireD": 1,
-  "grassD": 1,
-  "iceD": 1,
-  "steelD": 1,
-  "rockD": 1,
-  "fightD": 1,
-  "groundD": 1,
-  "watD": 1,
-  "ghostD": 1,
-  "flyD": 1,
-  "psyD": 1,
-  "darkD": 1,
-  "electricD": 1,
-  "poiD": 1,
-  "darkD": 1,
-  "draD": 1,
-  "fairyD": 1,
-  "normD": 1,
-  
-}
-vals = typedefense[type1](vals)
-vals = typedefense[type2](vals)
-print("these are the multipliers on damage to this type")
-print(vals)
+
+def get_starting_vals():
+  """Get a default array of attack and defense scaling
+
+  Returns:
+    A dict of default defense values (no types applied)
+  """
+  return {
+    "bugD": 1,
+    "fireD": 1,
+    "grassD": 1,
+    "iceD": 1,
+    "steelD": 1,
+    "rockD": 1,
+    "fightD": 1,
+    "groundD": 1,
+    "watD": 1,
+    "ghostD": 1,
+    "flyD": 1,
+    "psyD": 1,
+    "darkD": 1,
+    "electricD": 1,
+    "poiD": 1,
+    "draD": 1,
+    "fairyD": 1,
+    "normD": 1,
+  }
+
+def compute_defense(type1, type2, vals):
+  """Compute the defense scaling values for the given types
+
+  Returns: 
+    a mutated version of vals
+  """
+  vals = typedefense[type1](vals)
+  vals = typedefense[type2](vals)
+  return vals
+
+def print_output(vals):
+  """Prints the result of the check to the terminal
+  """
+  print("these are the multipliers on damage to this type")
+  print(vals)
+
+def main():
+  """Main command line function
+  """
+  type1, type2 = get_inputs()
+  vals = get_starting_vals()
+  vals = compute_defense(type1, type2, vals)
+  print_output(vals)
+
+if __name__ == "__main__":
+  main()
