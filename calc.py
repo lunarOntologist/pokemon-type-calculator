@@ -5,7 +5,7 @@ watD=1
 flyD=1
 grassD=1
 poiD=1
-electriD=1
+electricD=1
 groundD=1
 psyD=1
 rockD=1
@@ -17,8 +17,8 @@ darkD=1
 steelD=1
 fairyD=1
 
-type1= input("what pokemon type do you want to know about?").lower()
-type2= input("what is the secondary type? If none, say none").lower()
+type1= input("What pokemon type do you want to know about?: ").lower()
+type2= input("What is the secondary type? (If none, say none, or press enter to skip): ").lower()
 
 def norm(vals):
   print("normal")
@@ -70,10 +70,10 @@ def grass(vals):
   vals["groundD"] = vals["groundD"]* .5
   vals["watD"] = vals["watD"]* .5
   vals["bugD"] = vals["bugD"]* 2
-  vals["flyingD"] = vals["flyingD"]* 2
+  vals["flyD"] = vals["flyD"]* 2
   vals["fireD"] = vals["fireD"]* 2
   vals["iceD"] = vals["iceD"]* 2
-  vals["poisonD"] = vals["poisonD"]* 2
+  vals["poiD"] = vals["poiD"]* 2
   return vals
 def poi(vals):
   print("poison")
@@ -192,7 +192,7 @@ def fairy(vals):
 def none(vals):
   return vals
 typedefense={
-"normal": norm, "fire": fire, "fighting": fight, "fight": fight, "wat": wat, "fly": fly, "flying": fly, "grass": grass, "poison": poi, "electric": electric, "ground": ground, "psychic": psy, "psy": psy, "rock": rock, "ice": ice, "bug": bug, "dragon": dra, "dra": dra, "ghost": ghost, "dark": dark, "steel": steel, "faerie": fairy, "fairy": fairy, "none": none, "": none
+"normal": norm, "fire": fire, "fighting": fight, "fight": fight, "water": wat, "fly": fly, "flying": fly, "grass": grass, "poison": poi, "electric": electric, "ground": ground, "psychic": psy, "psy": psy, "rock": rock, "ice": ice, "bug": bug, "dragon": dra, "dra": dra, "ghost": ghost, "dark": dark, "steel": steel, "faerie": fairy, "fairy": fairy, "none": none, "": none
 }
 vals = {
   "bugD": 1,
