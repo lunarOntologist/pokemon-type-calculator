@@ -3,6 +3,8 @@
 Type advantage calculator
 """
 
+types=["normal", "fire", "fighting", "water", "flying", "grass", "poison", "electric", "ground", "psychic", "rock", "ice", "bug", "dragon", "ghost", "dark", "steel", "fairy"]
+
 def get_inputs():
   """Prompts the user for one or more types to check.
 
