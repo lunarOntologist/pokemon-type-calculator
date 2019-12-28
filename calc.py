@@ -231,7 +231,7 @@ def print_output(vals):
   """Prints the result of the check to the terminal
   """
   print("these are the multipliers on damage to this type")
-  print(vals)
+  vals = [print(x) for x in vals.items() if x[1] != 1]
 
 def main():
   """Main command line function
