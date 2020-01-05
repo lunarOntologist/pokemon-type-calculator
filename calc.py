@@ -30,6 +30,7 @@ def fire(vals):
     vals["grassD"] = vals["grassD"]* .5
     vals["iceD"] = vals["iceD"]* .5
     vals["steelD"] = vals["steelD"]* .5
+    vals["fairyD"] = vals["fairyD"]* .5
     vals["watD"] = vals["watD"]* 2
     vals["groundD"] = vals["groundD"]* 2
     vals["rockD"] = vals["rockD"]* 2
@@ -41,6 +42,7 @@ def fight(vals):
     vals["psyD"] = vals["psyD"]* 2
     vals["flyD"] = vals["flyD"]* 2
     vals["darkD"] = vals["darkD"]* 2
+    vals["fairyD"] = vals["fairyD"]* 2
     return vals
 def wat(vals):
     print("wat")
