@@ -45,7 +45,7 @@ def fight(vals):
 def wat(vals):
     print("wat")
     vals["electricD"] = vals["electricD"]* 2
-    vals["grass"] = vals["grassD"]* 2
+    vals["grassD"] = vals["grassD"]* 2
     vals["fireD"] = vals["fireD"]* .5
     vals["iceD"] = vals["iceD"]* .5
     vals["steelD"] = vals["steelD"]* .5
